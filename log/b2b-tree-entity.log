@@ -1,0 +1,577 @@
+nohup: ignoring input
+Reading lines...
+Transfer numbers...
+Indexing words...
+Indexed 23 words in output
+Number of training data 21162
+Number of testind data 1000
+You are using a model of type bert to instantiate a model of type EnhanceBert. This is not supported for all configurations of models and can yield errors.
+Some weights of the model checkpoint at /root/autodl-tmp/MWP-BERT were not used when initializing EnhanceBertModel: ['cls.predictions.decoder.bias', 'cls.predictions.decoder.weight', 'cls.predictions.transform.LayerNorm.weight', 'cls.predictions.transform.LayerNorm.bias', 'cls.predictions.transform.dense.weight', 'cls.predictions.transform.dense.bias', 'cls.predictions.bias']
+- This IS expected if you are initializing EnhanceBertModel from the checkpoint of a model trained on another task or with another architecture (e.g. initializing a BertForSequenceClassification model from a BertForPreTraining model).
+- This IS NOT expected if you are initializing EnhanceBertModel from the checkpoint of a model that you expect to be exactly identical (initializing a BertForSequenceClassification model from a BertForSequenceClassification model).
+Some weights of EnhanceBertModel were not initialized from the model checkpoint at /root/autodl-tmp/MWP-BERT and are newly initialized: ['bert.pooler.dense.bias', 'bert.embeddings.attribute_pos_embeddings.weight', 'bert.embeddings.num_pos_embeddings.weight', 'bert.pooler.dense.weight']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+Some weights of BertLMHeadModel were not initialized from the model checkpoint at /root/autodl-tmp/MWP-BERT and are newly initialized: ['bert.encoder.layer.4.crossattention.self.query.weight', 'bert.encoder.layer.5.crossattention.self.value.weight', 'bert.encoder.layer.9.crossattention.self.query.bias', 'bert.encoder.layer.10.crossattention.self.key.weight', 'bert.encoder.layer.10.crossattention.output.dense.weight', 'bert.encoder.layer.9.crossattention.self.query.weight', 'bert.encoder.layer.7.crossattention.self.query.weight', 'bert.encoder.layer.0.crossattention.self.value.weight', 'bert.encoder.layer.0.crossattention.self.key.bias', 'bert.encoder.layer.8.crossattention.self.query.bias', 'bert.encoder.layer.3.crossattention.self.value.weight', 'bert.encoder.layer.3.crossattention.output.dense.weight', 'bert.encoder.layer.10.crossattention.self.value.weight', 'bert.encoder.layer.3.crossattention.output.LayerNorm.weight', 'bert.encoder.layer.0.crossattention.output.LayerNorm.bias', 'bert.encoder.layer.1.crossattention.output.LayerNorm.weight', 'bert.encoder.layer.2.crossattention.self.value.bias', 'bert.encoder.layer.4.crossattention.output.LayerNorm.weight', 'bert.encoder.layer.5.crossattention.output.LayerNorm.weight', 'bert.encoder.layer.6.crossattention.self.value.weight', 'bert.encoder.layer.2.crossattention.output.dense.weight', 'bert.encoder.layer.6.crossattention.self.value.bias', 'bert.encoder.layer.1.crossattention.self.value.bias', 'bert.encoder.layer.7.crossattention.self.key.weight', 'bert.encoder.layer.8.crossattention.output.dense.weight', 'bert.encoder.layer.5.crossattention.output.dense.weight', 'bert.encoder.layer.1.crossattention.output.LayerNorm.bias', 'bert.encoder.layer.7.crossattention.self.query.bias', 'bert.encoder.layer.6.crossattention.self.key.bias', 'bert.encoder.layer.5.crossattention.output.LayerNorm.bias', 'bert.encoder.layer.10.crossattention.self.query.weight', 'bert.encoder.layer.2.crossattention.output.dense.bias', 'bert.encoder.layer.10.crossattention.self.query.bias', 'bert.encoder.layer.0.crossattention.output.dense.weight', 'bert.encoder.layer.10.crossattention.self.value.bias', 'bert.encoder.layer.7.crossattention.output.dense.bias', 'bert.encoder.layer.10.crossattention.self.key.bias', 'bert.encoder.layer.11.crossattention.self.value.bias', 'bert.encoder.layer.5.crossattention.output.dense.bias', 'bert.encoder.layer.6.crossattention.self.query.bias', 'bert.encoder.layer.8.crossattention.self.query.weight', 'bert.encoder.layer.9.crossattention.self.key.bias', 'bert.encoder.layer.4.crossattention.output.LayerNorm.bias', 'bert.encoder.layer.11.crossattention.self.key.weight', 'bert.encoder.layer.6.crossattention.output.LayerNorm.weight', 'bert.encoder.layer.0.crossattention.self.value.bias', 'bert.encoder.layer.6.crossattention.output.dense.weight', 'bert.encoder.layer.9.crossattention.output.LayerNorm.weight', 'bert.encoder.layer.1.crossattention.output.dense.bias', 'bert.encoder.layer.4.crossattention.self.value.bias', 'bert.encoder.layer.11.crossattention.output.dense.weight', 'bert.encoder.layer.1.crossattention.self.query.bias', 'bert.encoder.layer.11.crossattention.self.query.weight', 'bert.encoder.layer.8.crossattention.output.LayerNorm.weight', 'bert.encoder.layer.8.crossattention.self.value.bias', 'bert.encoder.layer.6.crossattention.self.key.weight', 'bert.encoder.layer.9.crossattention.self.value.weight', 'bert.encoder.layer.1.crossattention.self.key.weight', 'bert.encoder.layer.7.crossattention.output.dense.weight', 'bert.encoder.layer.4.crossattention.output.dense.bias', 'bert.encoder.layer.2.crossattention.self.key.weight', 'bert.encoder.layer.1.crossattention.self.query.weight', 'bert.encoder.layer.0.crossattention.self.key.weight', 'bert.encoder.layer.10.crossattention.output.LayerNorm.bias', 'bert.encoder.layer.9.crossattention.self.value.bias', 'bert.encoder.layer.6.crossattention.output.LayerNorm.bias', 'bert.encoder.layer.5.crossattention.self.key.weight', 'bert.encoder.layer.10.crossattention.output.LayerNorm.weight', 'bert.encoder.layer.8.crossattention.self.value.weight', 'bert.encoder.layer.3.crossattention.self.key.bias', 'bert.encoder.layer.11.crossattention.output.dense.bias', 'bert.encoder.layer.8.crossattention.output.dense.bias', 'bert.encoder.layer.9.crossattention.self.key.weight', 'bert.encoder.layer.4.crossattention.output.dense.weight', 'bert.encoder.layer.8.crossattention.self.key.bias', 'bert.encoder.layer.3.crossattention.self.query.bias', 'bert.encoder.layer.4.crossattention.self.query.bias', 'bert.encoder.layer.11.crossattention.output.LayerNorm.bias', 'bert.encoder.layer.4.crossattention.self.value.weight', 'bert.encoder.layer.7.crossattention.self.key.bias', 'bert.encoder.layer.4.crossattention.self.key.weight', 'bert.encoder.layer.3.crossattention.self.query.weight', 'bert.encoder.layer.2.crossattention.self.key.bias', 'bert.encoder.layer.5.crossattention.self.key.bias', 'bert.encoder.layer.2.crossattention.self.query.bias', 'bert.encoder.layer.3.crossattention.output.dense.bias', 'bert.encoder.layer.2.crossattention.output.LayerNorm.weight', 'bert.encoder.layer.2.crossattention.self.query.weight', 'bert.encoder.layer.7.crossattention.output.LayerNorm.bias', 'bert.encoder.layer.5.crossattention.self.query.weight', 'bert.encoder.layer.11.crossattention.self.value.weight', 'bert.encoder.layer.11.crossattention.self.query.bias', 'bert.encoder.layer.0.crossattention.self.query.weight', 'bert.encoder.layer.11.crossattention.output.LayerNorm.weight', 'bert.encoder.layer.11.crossattention.self.key.bias', 'bert.encoder.layer.8.crossattention.output.LayerNorm.bias', 'bert.encoder.layer.9.crossattention.output.dense.weight', 'bert.encoder.layer.1.crossattention.self.key.bias', 'bert.encoder.layer.9.crossattention.output.dense.bias', 'bert.encoder.layer.3.crossattention.self.key.weight', 'bert.encoder.layer.9.crossattention.output.LayerNorm.bias', 'bert.encoder.layer.1.crossattention.self.value.weight', 'bert.encoder.layer.5.crossattention.self.query.bias', 'bert.encoder.layer.10.crossattention.output.dense.bias', 'bert.encoder.layer.5.crossattention.self.value.bias', 'bert.encoder.layer.8.crossattention.self.key.weight', 'bert.encoder.layer.3.crossattention.self.value.bias', 'bert.encoder.layer.2.crossattention.self.value.weight', 'bert.encoder.layer.3.crossattention.output.LayerNorm.bias', 'bert.encoder.layer.7.crossattention.self.value.bias', 'bert.encoder.layer.6.crossattention.self.query.weight', 'bert.encoder.layer.1.crossattention.output.dense.weight', 'bert.encoder.layer.4.crossattention.self.key.bias', 'bert.encoder.layer.7.crossattention.self.value.weight', 'bert.encoder.layer.2.crossattention.output.LayerNorm.bias', 'bert.encoder.layer.0.crossattention.output.dense.bias', 'bert.encoder.layer.0.crossattention.output.LayerNorm.weight', 'bert.encoder.layer.6.crossattention.output.dense.bias', 'bert.encoder.layer.7.crossattention.output.LayerNorm.weight', 'bert.encoder.layer.0.crossattention.self.query.bias']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+The following encoder weights were not tied to the decoder ['bert/embeddings/num_pos_embeddings', 'bert/embeddings/attribute_pos_embeddings', 'bert/pooler']
+Total parameters: 147524774
+epoch: 1
+Total loss: 8.114770604044281
+Tree loss: 0.9440334527964322
+Seq2Seq loss: 7.170737138327509
+training time 0h 5m 25s
+----------------------------------------------------------------------------------------------------
+epoch: 2
+Total loss: 1.717250554583223
+Tree loss: 0.6288480991863414
+Seq2Seq loss: 1.0884024541363608
+training time 0h 5m 21s
+----------------------------------------------------------------------------------------------------
+epoch: 3
+Total loss: 1.1008892708494575
+Tree loss: 0.5067257409369479
+Seq2Seq loss: 0.5941635311955415
+training time 0h 5m 18s
+----------------------------------------------------------------------------------------------------
+epoch: 4
+Total loss: 0.8925757174045298
+Tree loss: 0.4241232741230205
+Seq2Seq loss: 0.46845244253870255
+training time 0h 5m 16s
+----------------------------------------------------------------------------------------------------
+epoch: 5
+Total loss: 0.7146021640012636
+Tree loss: 0.3630492269452608
+Seq2Seq loss: 0.35155293701098367
+training time 0h 5m 28s
+----------------------------------------------------------------------------------------------------
+655 758 1000
+test_answer_acc 0.655 0.758
+testing time 0h 1m 40s
+------------------------------------------------------------------------------------------------------------------------
+epoch: 6
+Total loss: 0.5671821222204461
+Tree loss: 0.31181209904684787
+Seq2Seq loss: 0.2553700236688026
+training time 0h 5m 37s
+----------------------------------------------------------------------------------------------------
+epoch: 7
+Total loss: 0.48551223019638784
+Tree loss: 0.27838340362258185
+Seq2Seq loss: 0.20712882670886226
+training time 0h 5m 15s
+----------------------------------------------------------------------------------------------------
+epoch: 8
+Total loss: 0.4198276655596544
+Tree loss: 0.24972429993109438
+Seq2Seq loss: 0.17010336589867256
+training time 0h 5m 17s
+----------------------------------------------------------------------------------------------------
+epoch: 9
+Total loss: 0.3763281953298796
+Tree loss: 0.2300635941349127
+Seq2Seq loss: 0.14626460120622123
+training time 0h 5m 17s
+----------------------------------------------------------------------------------------------------
+epoch: 10
+Total loss: 0.33180866145115234
+Tree loss: 0.20717013985751412
+Seq2Seq loss: 0.12463852143044563
+training time 0h 5m 31s
+----------------------------------------------------------------------------------------------------
+687 801 1000
+test_answer_acc 0.687 0.801
+testing time 0h 1m 25s
+------------------------------------------------------------------------------------------------------------------------
+epoch: 11
+Total loss: 0.2903946265690813
+Tree loss: 0.1842768570053705
+Seq2Seq loss: 0.10611776942865551
+training time 0h 5m 29s
+----------------------------------------------------------------------------------------------------
+epoch: 12
+Total loss: 0.26625492870582573
+Tree loss: 0.16898856436963175
+Seq2Seq loss: 0.09726636481451668
+training time 0h 5m 18s
+----------------------------------------------------------------------------------------------------
+epoch: 13
+Total loss: 0.25672765608505566
+Tree loss: 0.15958230206996113
+Seq2Seq loss: 0.09714535351144843
+training time 0h 5m 18s
+----------------------------------------------------------------------------------------------------
+epoch: 14
+Total loss: 0.20696010787794064
+Tree loss: 0.13624980546016346
+Seq2Seq loss: 0.07071030242621806
+training time 0h 5m 19s
+----------------------------------------------------------------------------------------------------
+epoch: 15
+Total loss: 0.19262944889505285
+Tree loss: 0.12817648922309866
+Seq2Seq loss: 0.06445295980701005
+training time 0h 5m 20s
+----------------------------------------------------------------------------------------------------
+698 829 1000
+test_answer_acc 0.698 0.829
+testing time 0h 1m 20s
+------------------------------------------------------------------------------------------------------------------------
+epoch: 16
+Total loss: 0.1788139450631113
+Tree loss: 0.119854522801463
+Seq2Seq loss: 0.05895942208860801
+training time 0h 5m 19s
+----------------------------------------------------------------------------------------------------
+epoch: 17
+Total loss: 0.16152601514371767
+Tree loss: 0.10913333519899326
+Seq2Seq loss: 0.05239267956910042
+training time 0h 5m 34s
+----------------------------------------------------------------------------------------------------
+epoch: 18
+Total loss: 0.15031037349085058
+Tree loss: 0.10281157666631609
+Seq2Seq loss: 0.04749879689909677
+training time 0h 5m 26s
+----------------------------------------------------------------------------------------------------
+epoch: 19
+Total loss: 0.14297652982310402
+Tree loss: 0.0991375608731263
+Seq2Seq loss: 0.04383896888104286
+training time 0h 5m 21s
+----------------------------------------------------------------------------------------------------
+epoch: 20
+Total loss: 0.13166614745116131
+Tree loss: 0.0914925105329547
+Seq2Seq loss: 0.040173636747979954
+training time 0h 5m 22s
+----------------------------------------------------------------------------------------------------
+712 832 1000
+test_answer_acc 0.712 0.832
+testing time 0h 1m 25s
+------------------------------------------------------------------------------------------------------------------------
+epoch: 21
+Total loss: 0.11239184647956112
+Tree loss: 0.07663487304097716
+Seq2Seq loss: 0.03575697340763361
+training time 0h 5m 27s
+----------------------------------------------------------------------------------------------------
+epoch: 22
+Total loss: 0.09949444112258193
+Tree loss: 0.0666742079175187
+Seq2Seq loss: 0.03282023304679469
+training time 0h 5m 27s
+----------------------------------------------------------------------------------------------------
+epoch: 23
+Total loss: 0.09567352050347011
+Tree loss: 0.06511460688440661
+Seq2Seq loss: 0.030558913676040016
+training time 0h 5m 24s
+----------------------------------------------------------------------------------------------------
+epoch: 24
+Total loss: 0.08733268058507097
+Tree loss: 0.05985775846232491
+Seq2Seq loss: 0.0274749222657154
+training time 0h 5m 24s
+----------------------------------------------------------------------------------------------------
+epoch: 25
+Total loss: 0.08132375630316557
+Tree loss: 0.055912274832477175
+Seq2Seq loss: 0.02541148143411078
+training time 0h 5m 27s
+----------------------------------------------------------------------------------------------------
+708 839 1000
+test_answer_acc 0.708 0.839
+testing time 0h 1m 20s
+------------------------------------------------------------------------------------------------------------------------
+epoch: 26
+Total loss: 0.07809493690025719
+Tree loss: 0.054389145187302014
+Seq2Seq loss: 0.02370579183148077
+training time 0h 5m 28s
+----------------------------------------------------------------------------------------------------
+epoch: 27
+Total loss: 0.07145262071778408
+Tree loss: 0.04995682153195208
+Seq2Seq loss: 0.021495799202362238
+training time 0h 5m 25s
+----------------------------------------------------------------------------------------------------
+epoch: 28
+Total loss: 0.0694758557163044
+Tree loss: 0.04796532871696836
+Seq2Seq loss: 0.02151052696205498
+training time 0h 5m 24s
+----------------------------------------------------------------------------------------------------
+epoch: 29
+Total loss: 0.06938080841202708
+Tree loss: 0.047123157531459146
+Seq2Seq loss: 0.022257650809522925
+training time 0h 5m 23s
+----------------------------------------------------------------------------------------------------
+epoch: 30
+Total loss: 0.06050501096560382
+Tree loss: 0.04210921191874883
+Seq2Seq loss: 0.018395798957169456
+training time 0h 5m 22s
+----------------------------------------------------------------------------------------------------
+718 840 1000
+test_answer_acc 0.718 0.84
+testing time 0h 1m 24s
+------------------------------------------------------------------------------------------------------------------------
+epoch: 31
+Total loss: 0.05249608327842846
+Tree loss: 0.03767130530233216
+Seq2Seq loss: 0.014824777905051266
+training time 0h 5m 25s
+----------------------------------------------------------------------------------------------------
+epoch: 32
+Total loss: 0.05071127242507173
+Tree loss: 0.036281430524221
+Seq2Seq loss: 0.014429841861986968
+training time 0h 5m 25s
+----------------------------------------------------------------------------------------------------
+epoch: 33
+Total loss: 0.049088329212526274
+Tree loss: 0.035408150631719155
+Seq2Seq loss: 0.013680178573772909
+training time 0h 5m 24s
+----------------------------------------------------------------------------------------------------
+epoch: 34
+Total loss: 0.04740913543256506
+Tree loss: 0.03444506539389906
+Seq2Seq loss: 0.012964069959531702
+training time 0h 5m 23s
+----------------------------------------------------------------------------------------------------
+epoch: 35
+Total loss: 0.045290917639263274
+Tree loss: 0.032875491354193855
+Seq2Seq loss: 0.012415426362093454
+training time 0h 5m 25s
+----------------------------------------------------------------------------------------------------
+721 840 1000
+test_answer_acc 0.721 0.84
+testing time 0h 1m 27s
+------------------------------------------------------------------------------------------------------------------------
+epoch: 36
+Total loss: 0.04671703777283022
+Tree loss: 0.03414916682508676
+Seq2Seq loss: 0.012567871023360593
+training time 0h 5m 23s
+----------------------------------------------------------------------------------------------------
+epoch: 37
+Total loss: 0.04251389035580856
+Tree loss: 0.03146956990957628
+Seq2Seq loss: 0.011044320449573503
+training time 0h 5m 23s
+----------------------------------------------------------------------------------------------------
+epoch: 38
+Total loss: 0.03966723496356016
+Tree loss: 0.02949648113936057
+Seq2Seq loss: 0.010170753832640593
+training time 0h 5m 24s
+----------------------------------------------------------------------------------------------------
+epoch: 39
+Total loss: 0.041373640656178635
+Tree loss: 0.03073574926245543
+Seq2Seq loss: 0.010637891509523071
+training time 0h 5m 22s
+----------------------------------------------------------------------------------------------------
+epoch: 40
+Total loss: 0.03662574566915502
+Tree loss: 0.0275941993935692
+Seq2Seq loss: 0.00903154629308328
+training time 0h 5m 23s
+----------------------------------------------------------------------------------------------------
+726 853 1000
+test_answer_acc 0.726 0.853
+testing time 0h 1m 26s
+------------------------------------------------------------------------------------------------------------------------
+epoch: 41
+Total loss: 0.03238514535378082
+Tree loss: 0.02393408178369753
+Seq2Seq loss: 0.008451063522866438
+training time 0h 5m 24s
+----------------------------------------------------------------------------------------------------
+epoch: 42
+Total loss: 0.03023231940539525
+Tree loss: 0.022268124668154844
+Seq2Seq loss: 0.00796419473214067
+training time 0h 5m 23s
+----------------------------------------------------------------------------------------------------
+epoch: 43
+Total loss: 0.030797823167299097
+Tree loss: 0.022058343168895333
+Seq2Seq loss: 0.008739479932150804
+training time 0h 5m 24s
+----------------------------------------------------------------------------------------------------
+epoch: 44
+Total loss: 0.029807838819164136
+Tree loss: 0.021914853159499318
+Seq2Seq loss: 0.007892985722708471
+training time 0h 5m 26s
+----------------------------------------------------------------------------------------------------
+epoch: 45
+Total loss: 0.02905927927710197
+Tree loss: 0.021538497520743622
+Seq2Seq loss: 0.007520781780758044
+training time 0h 5m 23s
+----------------------------------------------------------------------------------------------------
+725 854 1000
+test_answer_acc 0.725 0.854
+testing time 0h 1m 29s
+------------------------------------------------------------------------------------------------------------------------
+epoch: 46
+Total loss: 0.026649614778984622
+Tree loss: 0.01992599134762691
+Seq2Seq loss: 0.006723623377766196
+training time 0h 5m 24s
+----------------------------------------------------------------------------------------------------
+epoch: 47
+Total loss: 0.023710319787486153
+Tree loss: 0.017690289291582038
+Seq2Seq loss: 0.006020030486891595
+training time 0h 5m 26s
+----------------------------------------------------------------------------------------------------
+epoch: 48
+Total loss: 0.02367086277457287
+Tree loss: 0.01724534847482923
+Seq2Seq loss: 0.006425514318713852
+training time 0h 5m 26s
+----------------------------------------------------------------------------------------------------
+epoch: 49
+Total loss: 0.02111487857829653
+Tree loss: 0.015323058184843164
+Seq2Seq loss: 0.005791820393057692
+training time 0h 5m 24s
+----------------------------------------------------------------------------------------------------
+epoch: 50
+Total loss: 0.019514455144178253
+Tree loss: 0.014721410920888509
+Seq2Seq loss: 0.004793044207111182
+training time 0h 5m 23s
+----------------------------------------------------------------------------------------------------
+727 859 1000
+test_answer_acc 0.727 0.859
+testing time 0h 1m 25s
+------------------------------------------------------------------------------------------------------------------------
+epoch: 51
+Total loss: 0.018633902489504542
+Tree loss: 0.014152309057744863
+Seq2Seq loss: 0.004481593393577366
+training time 0h 5m 24s
+----------------------------------------------------------------------------------------------------
+epoch: 52
+Total loss: 0.019340277031863116
+Tree loss: 0.014650217342465488
+Seq2Seq loss: 0.004690059736218749
+training time 0h 5m 23s
+----------------------------------------------------------------------------------------------------
+epoch: 53
+Total loss: 0.018718544000568375
+Tree loss: 0.014213697190394382
+Seq2Seq loss: 0.00450484687937255
+training time 0h 5m 26s
+----------------------------------------------------------------------------------------------------
+epoch: 54
+Total loss: 0.018241184938958755
+Tree loss: 0.01367068677622136
+Seq2Seq loss: 0.004570498143426437
+training time 0h 5m 25s
+----------------------------------------------------------------------------------------------------
+epoch: 55
+Total loss: 0.018059995909634013
+Tree loss: 0.013960497297452634
+Seq2Seq loss: 0.004099498648857935
+training time 0h 5m 26s
+----------------------------------------------------------------------------------------------------
+727 857 1000
+test_answer_acc 0.727 0.857
+testing time 0h 1m 31s
+------------------------------------------------------------------------------------------------------------------------
+epoch: 56
+Total loss: 0.016046747418980944
+Tree loss: 0.012280271918064627
+Seq2Seq loss: 0.0037664755460558408
+training time 0h 5m 34s
+----------------------------------------------------------------------------------------------------
+epoch: 57
+Total loss: 0.015911332531279992
+Tree loss: 0.012219761301733625
+Seq2Seq loss: 0.0036915712154560417
+training time 0h 5m 29s
+----------------------------------------------------------------------------------------------------
+epoch: 58
+Total loss: 0.014198859126832518
+Tree loss: 0.01110286417771487
+Seq2Seq loss: 0.003095994922624164
+training time 0h 5m 24s
+----------------------------------------------------------------------------------------------------
+epoch: 59
+Total loss: 0.014216802909601338
+Tree loss: 0.01093832764183603
+Seq2Seq loss: 0.0032784752829052286
+training time 0h 5m 25s
+----------------------------------------------------------------------------------------------------
+epoch: 60
+Total loss: 0.015058496117671353
+Tree loss: 0.011603316289221158
+Seq2Seq loss: 0.003455179838133143
+training time 0h 5m 24s
+----------------------------------------------------------------------------------------------------
+717 845 1000
+test_answer_acc 0.717 0.845
+testing time 0h 1m 25s
+------------------------------------------------------------------------------------------------------------------------
+epoch: 61
+Total loss: 0.012233552318900776
+Tree loss: 0.009393379114110312
+Seq2Seq loss: 0.0028401731971133505
+training time 0h 5m 29s
+----------------------------------------------------------------------------------------------------
+epoch: 62
+Total loss: 0.011733869357776497
+Tree loss: 0.009242020420758633
+Seq2Seq loss: 0.002491848951130128
+training time 0h 5m 24s
+----------------------------------------------------------------------------------------------------
+epoch: 63
+Total loss: 0.011271181353816296
+Tree loss: 0.008776713480983743
+Seq2Seq loss: 0.0024944679009527
+training time 0h 5m 23s
+----------------------------------------------------------------------------------------------------
+epoch: 64
+Total loss: 0.010854336158450719
+Tree loss: 0.00855113319877914
+Seq2Seq loss: 0.0023032029812466684
+training time 0h 5m 36s
+----------------------------------------------------------------------------------------------------
+epoch: 65
+Total loss: 0.010414250561495052
+Tree loss: 0.008188843693422045
+Seq2Seq loss: 0.0022254068326301997
+training time 0h 5m 23s
+----------------------------------------------------------------------------------------------------
+725 851 1000
+test_answer_acc 0.725 0.851
+testing time 0h 1m 26s
+------------------------------------------------------------------------------------------------------------------------
+epoch: 66
+Total loss: 0.0109388194331754
+Tree loss: 0.008344289773524591
+Seq2Seq loss: 0.0025945296690534974
+training time 0h 5m 36s
+----------------------------------------------------------------------------------------------------
+epoch: 67
+Total loss: 0.009677885723032282
+Tree loss: 0.007625794728007663
+Seq2Seq loss: 0.0020520909713365384
+training time 0h 5m 26s
+----------------------------------------------------------------------------------------------------
+epoch: 68
+Total loss: 0.008774948596980378
+Tree loss: 0.007018723932054954
+Seq2Seq loss: 0.0017562246644363248
+training time 0h 5m 27s
+----------------------------------------------------------------------------------------------------
+epoch: 69
+Total loss: 0.008334949143878754
+Tree loss: 0.006690415002034271
+Seq2Seq loss: 0.0016445341344998269
+training time 0h 5m 25s
+----------------------------------------------------------------------------------------------------
+epoch: 70
+Total loss: 0.008401448118862323
+Tree loss: 0.006761887535154812
+Seq2Seq loss: 0.0016395605846101302
+training time 0h 5m 31s
+----------------------------------------------------------------------------------------------------
+726 853 1000
+test_answer_acc 0.726 0.853
+testing time 0h 1m 24s
+------------------------------------------------------------------------------------------------------------------------
+epoch: 71
+Total loss: 0.00788192988219774
+Tree loss: 0.006368372891851541
+Seq2Seq loss: 0.001513556986752201
+training time 0h 5m 28s
+----------------------------------------------------------------------------------------------------
+epoch: 72
+Total loss: 0.007781607860698761
+Tree loss: 0.006308764042931391
+Seq2Seq loss: 0.0014728438216073184
+training time 0h 5m 31s
+----------------------------------------------------------------------------------------------------
+epoch: 73
+Total loss: 0.007413389226990279
+Tree loss: 0.006143658195056627
+Seq2Seq loss: 0.0012697310354706469
+training time 0h 5m 23s
+----------------------------------------------------------------------------------------------------
+epoch: 74
+Total loss: 0.007312014990658014
+Tree loss: 0.005991434899747542
+Seq2Seq loss: 0.0013205800785608586
+training time 0h 5m 25s
+----------------------------------------------------------------------------------------------------
+epoch: 75
+Total loss: 0.00720537989949871
+Tree loss: 0.005929769105574206
+Seq2Seq loss: 0.0012756108089847361
+training time 0h 5m 33s
+----------------------------------------------------------------------------------------------------
+728 859 1000
+test_answer_acc 0.728 0.859
+testing time 0h 1m 27s
+------------------------------------------------------------------------------------------------------------------------
+epoch: 76
+Total loss: 0.00644217437844126
+Tree loss: 0.005292866592097149
+Seq2Seq loss: 0.0011493077903860112
+training time 0h 5m 23s
+----------------------------------------------------------------------------------------------------
+730 858 1000
+test_answer_acc 0.73 0.858
+testing time 0h 1m 26s
+------------------------------------------------------------------------------------------------------------------------
+epoch: 77
+Total loss: 0.00618198842241377
+Tree loss: 0.005063756959511465
+Seq2Seq loss: 0.0011182314535085349
+training time 0h 5m 23s
+----------------------------------------------------------------------------------------------------
+729 859 1000
+test_answer_acc 0.729 0.859
+testing time 0h 1m 27s
+------------------------------------------------------------------------------------------------------------------------
+epoch: 78
+Total loss: 0.006183928954095409
+Tree loss: 0.005113867717579257
+Seq2Seq loss: 0.0010700612280607363
+training time 0h 5m 37s
+----------------------------------------------------------------------------------------------------
+727 856 1000
+test_answer_acc 0.727 0.856
+testing time 0h 1m 26s
+------------------------------------------------------------------------------------------------------------------------
+epoch: 79
+Total loss: 0.005941679668208977
+Tree loss: 0.004927839238760319
+Seq2Seq loss: 0.0010138404282788208
+training time 0h 5m 30s
+----------------------------------------------------------------------------------------------------
+728 858 1000
+test_answer_acc 0.728 0.858
+testing time 0h 1m 25s
+------------------------------------------------------------------------------------------------------------------------
+epoch: 80
+Total loss: 0.005477164306721864
+Tree loss: 0.004545414563003391
+Seq2Seq loss: 0.0009317497433262386
+training time 0h 5m 23s
+----------------------------------------------------------------------------------------------------
+730 860 1000
+test_answer_acc 0.73 0.86
+testing time 0h 1m 26s
+------------------------------------------------------------------------------------------------------------------------
