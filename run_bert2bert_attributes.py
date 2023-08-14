@@ -46,8 +46,8 @@ if not os.path.exists(output_dir):
     os.makedirs(output_dir)
 
 data_train = read_data_and_target_attributes('data/math23k/infix_math23k_processed.train', 'data/math23k/math23k_processed_attributes.train')
-data_train_post = read_data_and_target_attributes('data/math23k/post_math23k_processed.train', 'data/math23k/math23k_processed_attributes.train', infix=False)
-data_train.extend(data_train_post)
+data_train_pre = read_data_and_target_attributes('data/math23k/pre_math23k_processed.train', 'data/math23k/math23k_processed_attributes.train', infix=False)
+data_train.extend(data_train_pre)
 data_test, test_num_dicts = read_data_and_target_attributes('data/math23k/infix_math23k_processed.test', 'data/math23k/math23k_processed_attributes.test', train=False, origin_path='data/test23k_processed.json')
 
 test_target_batches, test_numdict_batches, test_encode_batches, test_nums_pos_batches, test_attributes_pos_batches = prepare_vail_test_attributes(data_test, test_num_dicts, tokenizer, test_batch_size=test_batch_size) 

@@ -502,3 +502,19 @@ def from_postfix_to_infix(postfix):
             stack.append((elem, 3))
     assert len(stack) == 1
     return stack[-1][0]
+
+def from_prefix_to_infix(prefix):
+    if isinstance(prefix, str):
+        prefix = prefix.split(' ')
+    stack = []
+    i = len(prefix) - 1
+    while i>= 0:
+        if prefix[i] in OP_LIST:
+            tmp = "( " + stack.pop() + " " + prefix[i] + " " + stack.pop()+ " )"
+            stack.append(tmp)
+            i -= 1
+        else:
+            stack.append(prefix[i])
+            i -= 1
+    assert len(stack) == 1
+    return stack.pop()
