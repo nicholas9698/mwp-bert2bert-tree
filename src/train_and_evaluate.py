@@ -109,10 +109,10 @@ def copy_list(l):
 
 def train_tree(input_batch, input_length, target_batch, target_length, nums_stack_batch, num_size_batch, generate_nums,
                model: BertEncoderDecoderModelFroTree, predict, generate, merge, model_optimizer, predict_optimizer, generate_optimizer,
-               merge_optimizer, output_lang, num_pos, seq_target_batch, input_post_batch, input_post_length, seq_target_post_batch, attribute_pos_batch, tokenizer: BertTokenizer):
+               merge_optimizer, output_lang, num_pos, seq_target_batch, input_pre_batch, input_pre_length, seq_target_pre_batch, attribute_pos_batch, tokenizer: BertTokenizer):
     # Sequence mask for attention
     seq_mask = []
-    max_len = max(input_post_length)
+    max_len = max(input_pre_length)
     for i in input_length:
         seq_mask.append([0 for _ in range(i)] + [1 for _ in range(i, max_len)])
     seq_mask = torch.BoolTensor(seq_mask)
@@ -146,8 +146,8 @@ def train_tree(input_batch, input_length, target_batch, target_length, nums_stac
     generate_optimizer.zero_grad()
     merge_optimizer.zero_grad()
 
-    encoder_outputs, problem_output, seq2seq_loss = model.get_hidden_state(input_batch, seq_target_batch, input_post_batch, input_post_length, seq_target_post_batch, num_pos, attribute_pos_batch, tokenizer)
-    # encoder_outputs, problem_output, seq2seq_loss = model.get_hidden_state(input_batch, seq_target_batch, input_post_batch, input_post_length, seq_target_post_batch, None, None, tokenizer)
+    encoder_outputs, problem_output, seq2seq_loss = model.get_hidden_state(input_batch, seq_target_batch, input_pre_batch, input_pre_length, seq_target_pre_batch, num_pos, attribute_pos_batch, tokenizer)
+    # encoder_outputs, problem_output, seq2seq_loss = model.get_hidden_state(input_batch, seq_target_batch, input_pre_batch, input_pre_length, seq_target_pre_batch, None, None, tokenizer)
     
     # Prepare input and output variables
     node_stacks = [[TreeNode(_)] for _ in problem_output.split(1, dim=0)]

@@ -157,7 +157,7 @@ for epoch in range(n_epochs):
     tree_loss_total = 0
     seq2seq_loss_total = 0
     input_batches, input_lengths, output_batches, output_lengths, nums_batches, \
-   num_stack_batches, num_pos_batches, num_size_batches, num_value_batches, target_batches, input_post_batches, input_post_lengths, target_post_batches, attribute_pos_batches = prepare_train_batch(train_pairs, batch_size)
+   num_stack_batches, num_pos_batches, num_size_batches, num_value_batches, target_batches, input_pre_batches, input_pre_lengths, target_pre_batches, attribute_pos_batches = prepare_train_batch(train_pairs, batch_size)
     print("epoch:", epoch + 1)
     start = time.time()
     for idx in range(len(input_lengths)):
@@ -165,7 +165,7 @@ for epoch in range(n_epochs):
             input_batches[idx], input_lengths[idx], output_batches[idx], output_lengths[idx],
             num_stack_batches[idx], num_size_batches[idx], generate_num_ids, model, predict, generate, merge,
             model_optimizer, predict_optimizer, generate_optimizer, merge_optimizer, output_lang, num_pos_batches[idx], 
-            target_batches[idx], input_post_batches[idx], input_post_lengths[idx], target_post_batches[idx], attribute_pos_batches[idx], tokenizer=tokenizer)
+            target_batches[idx], input_pre_batches[idx], input_pre_lengths[idx], target_pre_batches[idx], attribute_pos_batches[idx], tokenizer=tokenizer)
         loss_total += (loss / len(input_lengths))
         tree_loss_total += (tree_loss / len(input_lengths))
         seq2seq_loss_total += (seq2seq_loss / len(input_lengths))

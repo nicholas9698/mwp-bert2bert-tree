@@ -205,9 +205,9 @@ class BertEncoderDecoderModel(EncoderDecoderModel):
 
 class BertEncoderDecoderModelFroTree(BertEncoderDecoderModel):
 
-    def get_hidden_state(self, inputs, targets, input_posts, input_post_lengths, target_posts, num_pos, attribute_pos, tokenizer:BertTokenizer):
+    def get_hidden_state(self, inputs, targets, input_pres, input_pre_lengths, target_pres, num_pos, attribute_pos, tokenizer:BertTokenizer):
         # Note: we run this all at once (over multiple batches of multiple sequences)
-        input_length_max = max(input_post_lengths)
+        input_length_max = max(input_pre_lengths)
         input_ids = []
         attention_mask = []
         num_pos_ids = []
@@ -236,8 +236,8 @@ class BertEncoderDecoderModelFroTree(BertEncoderDecoderModel):
                     padded[attr] = 2
                 padded = torch.LongTensor(padded)
                 attribute_pos_ids.append(padded)
-        for idx,item in enumerate(input_posts):
-            # Postfix formal data
+        for idx,item in enumerate(input_pres):
+            # Prefix formal data
             input_id = item["input_ids"].squeeze()
             mask = item["attention_mask"].squeeze()
             zeros = torch.zeros(input_length_max - input_id.size(0))
@@ -267,7 +267,7 @@ class BertEncoderDecoderModelFroTree(BertEncoderDecoderModel):
         if attribute_pos != None:    
             attribute_pos_ids = torch.stack(attribute_pos_ids, dim=0).long().cuda()
 
-        labels = targets + target_posts
+        labels = targets + target_pres
         labels = tokenizer(labels, return_tensors="pt", add_special_tokens=False, padding=True)["input_ids"].cuda()
 
         if attribute_pos != None and num_pos != None:
@@ -277,7 +277,7 @@ class BertEncoderDecoderModelFroTree(BertEncoderDecoderModel):
         else:
             outputs = self.forward(input_ids = input_ids, attention_mask=attention_mask, num_pos_ids=None, attribute_pos_ids=None, labels=labels)
         last_hidden_state = outputs["encoder_last_hidden_state"]
-        encoder_output = last_hidden_state[:len(input_post_lengths)].transpose(0, 1)
+        encoder_output = last_hidden_state[:len(input_pre_lengths)].transpose(0, 1)
         loss = outputs["loss"]
         problem_output = encoder_output.mean(0)
 

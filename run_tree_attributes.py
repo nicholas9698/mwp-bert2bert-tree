@@ -131,7 +131,7 @@ for epoch in range(n_epochs):
     start = time.time()
 
     input_batches, input_lengths, output_batches, output_lengths, nums_batches, \
-   num_stack_batches, num_pos_batches, num_size_batches, num_value_batches, target_batches, input_post_batches, input_post_lengths, target_post_batches, attribute_pos_batches = prepare_train_batch(train_pairs, batch_size)
+   num_stack_batches, num_pos_batches, num_size_batches, num_value_batches, target_batches, input_pre_batches, input_pre_lengths, target_pre_batches, attribute_pos_batches = prepare_train_batch(train_pairs, batch_size)
 
     for idx in range(len(input_lengths)):
         loss = train_tree(

@@ -147,14 +147,14 @@ for epoch in range(n_epochs):
     start = time.time()
 
     input_batches, input_lengths, output_batches, output_lengths, nums_batches, \
-   num_stack_batches, num_pos_batches, num_size_batches, num_value_batches, target_batches, input_post_batches, input_post_lengths, target_post_batches, _ = prepare_train_batch(train_pairs, batch_size)
+   num_stack_batches, num_pos_batches, num_size_batches, num_value_batches, target_batches, input_pre_batches, input_pre_lengths, target_pre_batches, _ = prepare_train_batch(train_pairs, batch_size)
     
     for idx in range(len(input_lengths)):
         tree_loss, seq2seq_loss, loss = train_tree(
             input_batches[idx], input_lengths[idx], output_batches[idx], output_lengths[idx],
             num_stack_batches[idx], num_size_batches[idx], generate_num_ids, model, predict, generate, merge,
             model_optimizer, predict_optimizer, generate_optimizer, merge_optimizer, output_lang, num_pos_batches[idx], 
-            target_batches[idx], input_post_batches[idx], input_post_lengths[idx], target_post_batches[idx], None, tokenizer=tokenizer)
+            target_batches[idx], input_pre_batches[idx], input_pre_lengths[idx], target_pre_batches[idx], None, tokenizer=tokenizer)
         loss_total += (loss / len(input_lengths))
         tree_loss_total += (tree_loss / len(input_lengths))
         seq2seq_loss_total += (seq2seq_loss / len(input_lengths))

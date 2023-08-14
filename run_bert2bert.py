@@ -49,8 +49,8 @@ model.config.early_stopping = True
 # print('Total parameters: {}'.format(size))
 
 data_train = read_data_and_target('data/math23k/infix_math23k_processed.train')
-data_train_post = read_data_and_target('data/math23k/post_math23k_processed.train')
-data_train.extend(data_train_post)
+# data_train_post = read_data_and_target('data/math23k/post_math23k_processed.train')
+# data_train.extend(data_train_post)
 data_test, test_num_dicts = read_data_and_target('data/math23k/infix_math23k_processed.test', train=False, origin_path='data/test23k_processed.json')
 
 test_target_batches, test_numdict_batches, test_encode_batches = prepare_vail_test(data_test, test_num_dicts, tokenizer, test_batch_size=test_batch_size) 

@@ -203,13 +203,13 @@ def prepare_data(pairs_trained, pairs_tested, generate_nums, copy_nums, tokenize
         output_cell = indexes_from_sentence(output_lang, pair[1])
 
         target = " ".join(pair[4])
-        target_post = " ".join(pair[1])
+        target_pre = " ".join(pair[1])
 
-        input_post = tokenizer(['post'] + pair[0], return_tensors="pt", add_special_tokens=False, is_split_into_words=True)
-        input_post_length = input_post["input_ids"].squeeze().size(0)
+        input_pre = tokenizer(['pre'] + pair[0], return_tensors="pt", add_special_tokens=False, is_split_into_words=True)
+        input_pre_length = input_pre["input_ids"].squeeze().size(0)
 
         train_pairs.append((input, input_length, output_cell, len(output_cell),
-                            pair[2], num_pos, num_stack, target, input_post, input_post_length, target_post, pair[5]))
+                            pair[2], num_pos, num_stack, target, input_pre, input_pre_length, target_pre, pair[5]))
     
     print('Indexed %d words in output' % (output_lang.n_words))
     print('Number of training data %d' % (len(train_pairs)))
@@ -290,13 +290,13 @@ def prepare_data_ape(pairs_trained, pairs_tested, pairs_tested_ape, generate_num
         output_cell = indexes_from_sentence(output_lang, pair[1])
 
         target = " ".join(pair[4])
-        target_post = " ".join(pair[1])
+        target_pre = " ".join(pair[1])
 
-        input_post = tokenizer(['post'] + pair[0], return_tensors="pt", add_special_tokens=False, is_split_into_words=True)
-        input_post_length = input_post["input_ids"].squeeze().size(0)
+        input_pre = tokenizer(['pre'] + pair[0], return_tensors="pt", add_special_tokens=False, is_split_into_words=True)
+        input_pre_length = input_pre["input_ids"].squeeze().size(0)
 
         train_pairs.append((input, input_length, output_cell, len(output_cell),
-                            pair[2], num_pos, num_stack, target, input_post, input_post_length, target_post, pair[5]))
+                            pair[2], num_pos, num_stack, target, input_pre, input_pre_length, target_pre, pair[5]))
         
     print('Indexed %d words in output' % (output_lang.n_words))
     print('Number of training data %d' % (len(train_pairs)))
@@ -382,12 +382,12 @@ def prepare_train_batch(pairs_to_batch, batch_size):
     
     pos = 0
     input_lengths = []
-    input_post_lengths = []
+    input_pre_lengths = []
     output_lengths = []
     nums_batches = []
     batches = []
     input_batches = []
-    input_post_batches = []
+    input_pre_batches = []
     output_batches = []
     # Save the num stack which
     num_stack_batches = []
@@ -396,7 +396,7 @@ def prepare_train_batch(pairs_to_batch, batch_size):
     num_size_batches = []
     num_value_batches = []
     target_batches = []
-    target_post_batches = []
+    target_pre_batches = []
     
 
     while pos + batch_size < len(pairs):
@@ -407,21 +407,21 @@ def prepare_train_batch(pairs_to_batch, batch_size):
     for batch in batches:
         batch = sorted(batch, key=lambda tp: tp[1], reverse=True)
         input_length = []
-        input_post_length = []
+        input_pre_length = []
         output_length = []
 
         for _, i, _, j, _, _, _, _, _, k, _, _ in batch:
             output_length.append(j)
             input_length.append(i)
-            input_post_length.append(k)
+            input_pre_length.append(k)
         output_lengths.append(output_length)
         input_lengths.append(input_length)
-        input_post_lengths.append(input_post_length)
+        input_pre_lengths.append(input_pre_length)
 
         output_len_max = max(output_length)
 
         input_batch = []
-        input_post_batch = []
+        input_pre_batch = []
         output_batch = []
         num_batch = []
         num_stack_batch = []
@@ -430,12 +430,12 @@ def prepare_train_batch(pairs_to_batch, batch_size):
         num_size_batch = []
         num_value_batch = []
         target_batch = []
-        target_post_batch = []
+        target_pre_batch = []
 
-        for i, _, j, lj, num, num_pos, num_stack, target, k, _, target_post, attribute in batch:
+        for i, _, j, lj, num, num_pos, num_stack, target, k, _, target_pre, attribute in batch:
             num_batch.append(len(num))
             input_batch.append(i)
-            input_post_batch.append(k)
+            input_pre_batch.append(k)
             output_batch.append(pad_seq(j, lj, output_len_max))
             num_stack_batch.append(num_stack)
             num_pos_batch.append(num_pos)
@@ -443,10 +443,10 @@ def prepare_train_batch(pairs_to_batch, batch_size):
             num_size_batch.append(len(num_pos))
             num_value_batch.append(num)
             target_batch.append(target)
-            target_post_batch.append(target_post)
+            target_pre_batch.append(target_pre)
             
         input_batches.append(input_batch)
-        input_post_batches.append(input_post_batch)
+        input_pre_batches.append(input_pre_batch)
         nums_batches.append(num_batch)
         output_batches.append(output_batch)
         num_stack_batches.append(num_stack_batch)
@@ -455,7 +455,7 @@ def prepare_train_batch(pairs_to_batch, batch_size):
         num_size_batches.append(num_size_batch)
         num_value_batches.append(num_value_batch)
         target_batches.append(target_batch)
-        target_post_batches.append(target_post_batch)
+        target_pre_batches.append(target_pre_batch)
         
     return input_batches, input_lengths, output_batches, output_lengths, nums_batches, num_stack_batches, num_pos_batches, num_size_batches, num_value_batches, \
-        target_batches, input_post_batches, input_post_lengths, target_post_batches, attribute_pos_batches
+        target_batches, input_pre_batches, input_pre_lengths, target_pre_batches, attribute_pos_batches
