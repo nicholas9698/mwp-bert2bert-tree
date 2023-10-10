@@ -1,6 +1,5 @@
 # BERT2BERT-Tree
-This is the offcial repo for the EAAI paper "[BERT2BERT-Tree: Fusion Network of Seq2Seq and
-Tree-based Decoder for Math Word Problems](https://arxiv.org/)".
+This is the offcial repo for the EAAI paper "[A Fusion Network of Sequence-to-Sequence Model and Tree-based Decoder for Math Word Problems](https://arxiv.org/)".
 
 ## Train and Test
 
