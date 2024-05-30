@@ -42,12 +42,12 @@ We reproduce the main results of **BERT2BERT-Tree** in the following tables:
 
 ## Dataset
 
-The data used by the bert2bert model is uploaded to GitHub (`data/math23k/`).
+The data used by the bert2bert model is uploaded to `data/math23k/`.
 > *Wang, Yan, et al.*,
 > *[Deep Neural Solver for Math Word Problems](https://doi.org/10.18653/v1/D17-1088)* *(Math23K first introduced)*,
 > *EMNLP 2017*
 
-The [Math23K](https://github.com/2003pro/Graph2Tree/tree/master/math23k/data) and [Ape-clean](https://github.com/LZhenwen/MWP-BERT/tree/main/Fine-tuning/Math23k/data) data for bert2bert-tree is in `(data/)`. 
+The [Math23K](https://github.com/2003pro/Graph2Tree/tree/master/math23k/data) and [Ape-clean](https://github.com/LZhenwen/MWP-BERT/tree/main/Fine-tuning/Math23k/data) data for bert2bert-tree is in `data/`. 
 
 Moreover, the elements of [Ape-clean](https://github.com/LZhenwen/MWP-BERT/tree/main/Fine-tuning/Math23k/data) are sampled from [Ape-210K](https://github.com/Chenny0808/ape210k) as listed in `(data/ape_simple_id.txt)` and `(data/ape_simple_test_id.txt)`
 > *Zhao, Wei, et al.*,
@@ -56,13 +56,13 @@ Moreover, the elements of [Ape-clean](https://github.com/LZhenwen/MWP-BERT/tree/
 
 ## Entity Attributes Building
 
-Build the entity attributes for your own data:
+Build the entity attributes for your data:
 
 > The process relies on *[Stanford CoreNLP](https://stanfordnlp.github.io/CoreNLP/)*, follow this *[guide](https://github.com/Lynten/stanford-corenlp)* to install the PyPI package and download the Chinese model package.
 
-1. Follow the instruction ***Recut the word*** in `(attributes_building.ipynb)` to prepare the data of entity attributes generating.
+1. Follow the instruction ***Recut the word*** in `attributes_building.ipynb` to prepare the data of entity attributes generating.
 
-2. Execute the ***Extract entity attributes of numbers*** in `(attributes_building.ipynb)` to generate the corresponding number entity attributes.
+2. Execute the ***Extract entity attributes of numbers*** in `attributes_building.ipynb` to generate the corresponding number entity attributes.
 
 ## Citation
 
